@@ -1,0 +1,350 @@
+{
+  "default": {
+    "label": "Tangled Birthday",
+    "lanterns": {
+      "count": 240,
+      "rectFraction": 0.6,
+      "minDistanceMult": 4.15,
+      "maxDistanceMult": 12.3,
+      "spreadJitter": 0.6,
+      "wedgeHalfAngleDeg": 45,
+      "spawnHeightOffset": -2,
+      "spawnHeightJitter": 30,
+      "riseSpeed": 0.62,
+      "riseEaseDistance": 0.6,
+      "settleAltitudeDeg": 20,
+      "settleAltitudeMinDeg": 0,
+      "settleAltitudeMaxDeg": 90,
+      "settleHeightAt0": 0.8,
+      "settleHeightAt90": 3.2,
+      "settleHeightBandFrac": 0.18,
+      "verticalSpread": 30,
+      "centerLeadTime": 0.35,
+      "spreadDelayPerRadian": 1.4,
+      "spawnDelayJitter": 0.4,
+      "driftRadius": 0.55,
+      "driftSpeed": 0.35,
+      "swayAmount": 0.12,
+      "swaySpeed": 0.6,
+      "bobAmount": 0.08,
+      "bobSpeed": 0.5,
+      "idleBobAmount": 0.06,
+      "idleBobSpeed": 0.22,
+      "rectSize": {
+        "minW": 0.15,
+        "maxW": 0.27,
+        "minH": 0.27,
+        "maxH": 0.44,
+        "minD": 0.15,
+        "maxD": 0.21
+      },
+      "circSize": {
+        "minR": 0.12,
+        "maxR": 0.21,
+        "minH": 0.3,
+        "maxH": 0.45
+      },
+      "hotColor": 16767907,
+      "coolColor": 16751181,
+      "emissiveIntensity": 2.4,
+      "flickerSpeed": 2,
+      "flickerAmount": 0.06
+    },
+    "lanternSkyGlow": {
+      "enabled": true,
+      "color": 16757596,
+      "maxIntensity": 0.5,
+      "fadeInDuration": 2.5,
+      "baseAngularRadiusDeg": 10,
+      "radiusPerSpreadUnit": 0.6,
+      "falloffPower": 1.6,
+      "densityFalloff": 0.1
+    },
+    "drag": {},
+    "candleFlame": {
+      "flameHeight": 0.11,
+      "flameWidth": 0.032,
+      "coreColor": 16774869,
+      "midColor": 16757575,
+      "outerColor": 16742938,
+      "coreTightness": 0.55,
+      "swaySpeed": 3,
+      "swayAmount": 0.04,
+      "lightColor": 16754253,
+      "lightIntensity": 0.25,
+      "lightDistance": 0.2,
+      "flickerSpeed": 14,
+      "flickerAmount": 0.25,
+      "wickOffset": 0.01,
+      "pickRadius": 0.09
+    },
+    "framing": {
+      "distanceMult": 0.3,
+      "sidestepMult": 2,
+      "shoulderOffset": -0.13,
+      "eyeStartT": 0.15,
+      "eyeRangeT": 0.75,
+      "lookStartT": 0.35,
+      "lookRangeT": 0.75
+    },
+    "orbit": {
+      "orbitAngle": 1.6581
+    },
+    "climb": {
+      "climbTopT": 0.55
+    },
+    "director": {
+      "climbEndScroll": 0.62,
+      "swingEndScroll": 0.78,
+      "commitRate": 0.9,
+      "transitionDuration": 5.0,
+      "arcClearance": 1.5,
+      "cakeDistanceMult": 2.2,
+      "cakeEyeHeightT": 0.85,
+      "cakeLookHeightT": 0.45,
+      "eyesEndScroll": 0.92,
+      "eyesLookHeightT": 0.55,
+      "eyesTransitionDuration": 2.2,
+      "horizonEndScroll": 1,
+      "horizonLookDistance": 105,
+      "horizonLookRaise": 27.5,
+      "horizonLookSideOffset": 0,
+      "horizonTransitionDuration": 1.6,
+      "faceHideEyesT": 0.75,
+      "faceShowEyesT": 0.75,
+      "minOrbitSweep": 1.5707963267948966
+    },
+    "stars": {
+      "count": 1800,
+      "fieldRadius": 780,
+      "size": 1.6
+    },
+    "clouds": {
+      "count": 14,
+      "distance": 700,
+      "minAltitude01": 0.08,
+      "maxAltitude01": 0.4,
+      "minScale": 90,
+      "maxScale": 220,
+      "sunGlowColor": 16773846,
+      "sunGlowSharpness": 6,
+      "sunGlowStrength": 0.85,
+      "driftSpeed": 0.008
+    },
+    "godrays": {
+      "enabled": false,
+      "samples": 18,
+      "resScale": 0.25
+    },
+    "shadow": {
+      "sunMapSize": 2048,
+      "moonMapSize": 2048
+    },
+    "timeOfDay": {
+      "night": {
+        "celestial": {
+          "hours": 4,
+          "distance": 31.9
+        },
+        "sunLight": {
+          "color": 16382463,
+          "intensity": 2,
+          "castShadow": true,
+          "shadowMapSize": 2048
+        },
+        "moonLight": {
+          "color": 13096703,
+          "intensity": 2.6,
+          "castShadow": true,
+          "shadowMapSize": 2048
+        },
+        "fill": {
+          "color": 4151968,
+          "intensity": 1.33,
+          "posX": -18,
+          "posY": 20.4,
+          "posZ": 50
+        },
+        "ambient": {
+          "skyColor": 1778512,
+          "groundColor": 921648,
+          "intensity": 0.55
+        },
+        "exposure": 0.85,
+        "sky": {
+          "skyColor": 659504,
+          "horizonColor": 2765928,
+          "groundColor": 657944,
+          "horizonHeight": -0.02,
+          "horizonSharpness": 0.3
+        },
+        "sunVisual": {
+          "discColor": 16775404,
+          "glowColor": 16768176,
+          "visualSize": 28,
+          "glowSize": 220,
+          "glowOpacity": 0.55,
+          "distance": 750
+        },
+        "moonVisual": {
+          "discColor": 13224148,
+          "rimColor": 13490431,
+          "craterColor": 13223386,
+          "glowColor": 11452159,
+          "visualSize": 24,
+          "glowSize": 320,
+          "glowOpacity": 0.18,
+          "distance": 750
+        },
+        "stars": {
+          "baseOpacity": 0.9,
+          "fadeBandHeight": 4
+        },
+        "clouds": {
+          "litColor": 9412824,
+          "shadowColor": 1316140,
+          "opacity": 0.35
+        },
+        "bloom": {
+          "threshold": 0.62,
+          "strength": 0.7,
+          "radius": 0.4
+        },
+        "bloomBroad": {
+          "threshold": 0.5,
+          "strength": 0.45,
+          "radius": 0.9
+        },
+        "godrays": {
+          "exposure": 0.12,
+          "weight": 0.35,
+          "decay": 0.97,
+          "density": 0.85,
+          "sceneMask": 1
+        },
+        "grade": {
+          "warmTint": [
+            1.02,
+            0.98,
+            0.94
+          ],
+          "coolTint": [
+            0.78,
+            0.85,
+            1.15
+          ],
+          "splitBalance": 0.5,
+          "saturation": 1.4,
+          "contrast": 1.05,
+          "lift": 0.025,
+          "vignetteStrength": 0.43,
+          "vignetteSoftness": 0.87,
+          "chromaticAberration": 0.001,
+          "grainStrength": 0.004
+        }
+      },
+      "day": {
+        "celestial": {
+          "hours": 16,
+          "distance": 31.9
+        },
+        "sunLight": {
+          "color": 16776426,
+          "intensity": 2.5,
+          "castShadow": true,
+          "shadowMapSize": 2048
+        },
+        "moonLight": {
+          "color": 13096703,
+          "intensity": 0.35,
+          "castShadow": true,
+          "shadowMapSize": 2048
+        },
+        "fill": {
+          "color": 10465497,
+          "intensity": 1.3,
+          "posX": -22,
+          "posY": 14,
+          "posZ": 18
+        },
+        "ambient": {
+          "skyColor": 12896765,
+          "groundColor": 3346556,
+          "intensity": 0.75
+        },
+        "exposure": 0.95,
+        "sky": {
+          "skyColor": 3829413,
+          "horizonColor": 9881323,
+          "groundColor": 4536914,
+          "horizonHeight": -0.05,
+          "horizonSharpness": 0.35
+        },
+        "sunVisual": {
+          "discColor": 16775404,
+          "glowColor": 16768176,
+          "visualSize": 20,
+          "glowSize": 135,
+          "glowOpacity": 0.40,
+          "distance": 850
+        },
+        "moonVisual": {
+          "discColor": 13224148,
+          "rimColor": 13490431,
+          "craterColor": 13223386,
+          "glowColor": 11452159,
+          "visualSize": 24,
+          "glowSize": 320,
+          "glowOpacity": 0.18,
+          "distance": 750
+        },
+        "stars": {
+          "baseOpacity": 0.45,
+          "fadeBandHeight": 0.22
+        },
+        "clouds": {
+          "litColor": 16771529,
+          "shadowColor": 4867424,
+          "opacity": 0.5
+        },
+        "bloom": {
+          "threshold": 0.92,
+          "strength": 0.4,
+          "radius": 0.35
+        },
+        "bloomBroad": {
+          "threshold": 0.83,
+          "strength": 0.27,
+          "radius": 0.85
+        },
+        "godrays": {
+          "exposure": 0.35,
+          "weight": 0.55,
+          "decay": 0.97,
+          "density": 0.85,
+          "sceneMask": 1
+        },
+        "grade": {
+          "warmTint": [
+            1.06,
+            0.99,
+            0.88
+          ],
+          "coolTint": [
+            0.86,
+            0.9,
+            1.08
+          ],
+          "splitBalance": 0.5,
+          "saturation": 1.28,
+          "contrast": 1.06,
+          "lift": 0.015,
+          "vignetteStrength": 0.38,
+          "vignetteSoftness": 0.65,
+          "chromaticAberration": 0.001,
+          "grainStrength": 0.004
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,290 @@
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: #1c1f3a;
+}
+
+#scroll-track {
+  width: 100%;
+  height: 420vh;
+}
+
+#scene-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  touch-action: pan-y;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+#scene-canvas.ready { opacity: 1; }
+
+#overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+#cake-anchor {
+  position: absolute;
+  width: 220px;
+  height: 160px;
+  left: 0;
+  top: 0;
+  pointer-events: auto;
+}
+#flame-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#envelope-layer {
+  position: absolute;
+  width: 90px;
+  left: 0;
+  top: 0;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  pointer-events: auto;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+}
+#envelope-layer svg { width: 100%; display: block; }
+
+#final-message {
+  position: absolute;
+  width: 280px;
+  left: 0;
+  top: 0;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  pointer-events: none;
+}
+#final-message.visible { opacity: 1; }
+#final-message p {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 22px;
+  line-height: 1.6;
+  color: #fff6e8;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  margin: 0;
+}
+
+#letter-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(20, 16, 30, 0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  z-index: 20;
+  padding: 24px;
+}
+#letter-overlay.open { opacity: 1; pointer-events: auto; }
+#letter-card {
+  background: #fffdf8;
+  border-radius: 10px;
+  padding: 28px 24px;
+  max-width: 320px;
+  text-align: center;
+  transform: translateY(12px) scale(0.96);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.3, 1.1);
+}
+#letter-overlay.open #letter-card { transform: translateY(0) scale(1); }
+#letter-text {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #3a2f28;
+  margin: 0 0 20px;
+}
+#letter-close {
+  border: none;
+  background: #eaddc8;
+  color: #5b4636;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#motion-permission {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: none;
+  background: rgba(255,255,255,0.15);
+  color: #fff6e8;
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-size: 13px;
+  z-index: 15;
+  backdrop-filter: blur(4px);
+}
+#motion-permission.hidden { display: none; }
+
+#loading-screen {
+  position: fixed;
+  inset: 0;
+  background: #1c1f3a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 30;
+  transition: opacity 0.7s ease;
+}
+#loading-screen.hidden { opacity: 0; pointer-events: none; }
+
+#loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(320px, 84vw);
+  text-align: center;
+}
+
+#loading-note {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: #fff6e8;
+  opacity: 0.55;
+  margin: 0 0 28px;
+}
+#loading-note-name {
+  font-style: normal;
+}
+
+#loading-mark {
+  width: 28px;
+  height: 28px;
+  color: #ffb347;
+  margin-bottom: 22px;
+  animation: loading-mark-spin 3.2s linear infinite;
+}
+#loading-mark svg { width: 100%; height: 100%; display: block; }
+@keyframes loading-mark-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+#loading-bar-track {
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 246, 232, 0.14);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+#loading-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ffa64d, #fff6d5);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+#loading-tip {
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #fff6e8;
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0;
+  min-height: 2.8em;
+  margin: 0;
+  transition: opacity 0.5s ease;
+}
+#loading-tip.visible { opacity: 0.75; }
+
+/* ---- control hints ---- */
+
+#control-hints {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 8;
+}
+
+.hint {
+  position: absolute;
+  left: 50%;
+  bottom: max(28px, env(safe-area-inset-bottom, 0px) + 20px);
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  color: #fff6e8;
+}
+.hint.visible { opacity: 0.85; }
+
+.hint p {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.45);
+  white-space: nowrap;
+}
+
+.hint-icon {
+  width: 22px;
+  height: 34px;
+  overflow: visible;
+}
+
+/* scroll hint: dot travels down inside the pill, like a scroll-wheel glyph */
+#hint-scroll .hint-dot {
+  animation: hint-scroll-dot 1.8s ease-in-out infinite;
+}
+@keyframes hint-scroll-dot {
+  0%   { transform: translateY(0);    opacity: 1; }
+  60%  { transform: translateY(11px); opacity: 0.2; }
+  61%  { transform: translateY(11px); opacity: 0; }
+  62%  { transform: translateY(0);    opacity: 0; }
+  80%  { transform: translateY(0);    opacity: 1; }
+  100% { transform: translateY(0);    opacity: 1; }
+}
+
+/* candle hint: ring pulses outward like a soft tap/snuff */
+#hint-candles .hint-icon { width: 30px; height: 30px; }
+#hint-candles .hint-ring {
+  transform-origin: 16px 16px;
+  animation: hint-tap-ring 1.8s ease-out infinite;
+}
+@keyframes hint-tap-ring {
+  0%   { transform: scale(0.5); opacity: 0; }
+  15%  { opacity: 0.9; }
+  55%  { transform: scale(1.15); opacity: 0; }
+  100% { transform: scale(1.15); opacity: 0; }
+}
+
+@media (min-width: 720px) {
+  .hint { bottom: 36px; }
+  .hint p { font-size: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #loading-mark,
+  #hint-scroll .hint-dot,
+  #hint-candles .hint-ring {
+    animation: none;
+  }
+}
