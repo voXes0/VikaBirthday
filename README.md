@@ -3,5 +3,21 @@ This is a little project I made mostly with claude with little human written cod
 The scene was made in blender.
 
 ## Models
-[Tangled Tower](https://sketchfab.com/3d-models/rapunzel-tower-a04dde36f15c4515992157b573fe44c1)
-[Rapunzel](https://sketchfab.com/3d-models/rapunzel-rig-103bebc26b29480197f3c95af6d51049)
+- [Tangled Tower](https://sketchfab.com/3d-models/rapunzel-tower-a04dde36f15c4515992157b573fe44c1)
+- [Rapunzel](https://sketchfab.com/3d-models/rapunzel-rig-103bebc26b29480197f3c95af6d51049)
+
+## Getting Started
+### Production
+```bash
+git clone https://github.com/voxes0/VikaBirthday
+cd VikaBirthday
+npm install
+npm run preview
+```
+### Development (Includes config GUI)
+```bash
+git clone https://github.com/voxes0/VikaBirthday
+cd VikaBirthday
+npm install
+npm run dev
+```
